@@ -1,0 +1,111 @@
+{% load static %}
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balkeys</title>
+      <link rel="stylesheet" href="{% static 'css/index.css' %}">
+      {% tailwind_css %}
+      <style>
+.mySlides {display:none}
+
+</style>
+</head>
+<body class="back" >
+    <nav  >
+        <div class="nav "   >
+            
+            <img src="{% static 'images/myimage.jpg' %}" alt="My image" height="250px" width="150px" id="icon"/>
+            <div class="nav-btm" style="font-size: large;">
+                <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'product' %}">Products</a>
+            <a href="{% url 'About' %}">About Us</a>
+            <a href="{% url 'Contuct' %}">Contuct Us</a>
+            </div>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'product' %}">Products</a>
+            <a href="{% url 'About' %}">About Us</a>
+            <a href="{% url 'Contuct' %}">Contuct Us</a>
+              </div>
+        </div>
+       <span style="font-size:30px;cursor:pointer" id="menu" onclick="openNav()">&#9776;</span>
+    </nav>
+    <section id="banner">
+        <div class="dec" class="mt-10">
+           <!-- <img src="{% static 'images/banner.jpg' %}" height='100px' width=auto alt=""   > -->
+          
+            <img class="mySlides" src="{% static 'images/smt1.jpeg' %}" height='500px' width=auto alt=""    >
+            <img class="mySlides" src="{% static 'images/smt2.jpeg' %}" height='500px' width=auto alt=""    >
+            <img class="mySlides" src="{% static 'images/smt3.jpeg' %}" height='500px' width=auto alt=""    >
+            <img class="mySlides" src="{% static 'images/smt4.jpeg' %}" height='500px' width=auto alt=""    >
+        </div>
+
+    </section>
+    <section id="about">
+        <h1 class="text-xl font-bold mb-6"> About</h1>
+        <div class="text">
+            <p >
+                Believing in the motto that the customer has a proven right to demand the finest  product, our endeavor over the glorious effort have always been towards creating and providing the best. Perhaps it is this product excellence and perfectionist approach, which have enabled us to build and maintain a longstanding and strong relationship with our customers.
+                The Company's achievement in the face of such strong competition rests on the four pillars of QUALITY, EXPERIENCE, HONESTY AND PROMPT- SERVICE. The same consistent performance and trustworthy service.
+            </p>
+            <img src="{% static 'images/smtfull_v.jpg' %}" alt="smtfull" height="300px" width="500px">
+        </div>    
+    </section>mg_ny.j
+    <section id="prod">
+        <h3 class="text-xl font-bold mt-4 mb-12">OurProduct</h3>
+        <div class="back">
+            <img src="{% static 'images/prod.jpeg' %}" alt="product"  >
+        </div>
+    </section>
+    <footer id="foot">
+        <h3 class="text-xl font-bold">
+
+            Links
+        </h3>
+        <div class="ft">
+            <div class="ft1 " style="font-size: large;" >
+                <a href="">Home</a><a href="">Contuct Us</a><a href="">Products</a><a href="">Carrer</a><a href="">About Us</a>
+                
+        
+            </div>
+            <div class="ft2" style="font-size: large;">
+                <a href="">Linkdin</a><a href="">Instagram</a><a href="">Twitter</a>
+               
+            </div style="font-size: large;" >
+            <div class="ft3" >
+                <a id="email" name="email" href="mailto:?smt2014@gmail.com&body=this+is+a+gmail">smt2014@gmail.com</a> 
+            </div>
+                <p class="text-center text-green-800">&copy; 2024 Balkeys Naturals. All rights reserved.</p>
+        </div>
+    </footer>
+    <div >
+    </div>
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 3000); // Change image every 2 seconds
+}
+    </script>
+</body>
+</html> 

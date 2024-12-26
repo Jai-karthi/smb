@@ -1,0 +1,132 @@
+{% load static %}
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balkeys</title>
+      <link rel="stylesheet" href="{% static 'css/index.css' %}">
+      {% tailwind_css %}
+</head>
+<body >
+  <nav  >
+    <div class="nav "   >
+        
+        <img src="{% static 'images/myimage.jpg' %}" alt="My image" height="250px" width="150px" id="icon"/>
+        <div class="nav-btm" style="font-size: large;">
+            <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'product' %}">Products</a>
+        <a href="{% url 'About' %}">About Us</a>
+        <a href="{% url 'Contuct' %}">Contuct Us</a>
+        </div>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'product' %}">Products</a>
+        <a href="{% url 'About' %}">About Us</a>
+        <a href="{% url 'Contuct' %}">Contuct Us</a>
+          </div>
+    </div>
+   <span style="font-size:30px;cursor:pointer" id="menu" onclick="openNav()">&#9776;</span>
+</nav>
+    <section id="banner">
+        <div class="dec">
+           <img src="{% static 'images/banner.jpg' %}" height='100px' width=auto alt=""   >
+        </div>
+    </section>
+    <main class="flex-grow container mx-auto px-6 py-8">
+        <h1 class="text-4xl font-bold text-green-800 mb-8">About Balkeys Naturals</h1>
+        
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold text-green-700 mb-4">Our Story</h2>
+          <p class="text-gray-700 mb-4">
+            Founded with a passion for natural, wholesome foods, Balkeys Naturals has been at the forefront of providing high-quality, nutritious products to health-conscious consumers. Our journey began with a simple belief: that nature provides the best ingredients for a healthy life.
+          </p>
+          <p class="text-gray-700">
+            From our humble beginnings to becoming a trusted name in natural foods, we've remained committed to our core values of quality, sustainability, and customer satisfaction. Every Balkeys Naturals product is crafted with care, using only the finest natural ingredients.
+          </p>
+        </section>
+
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold text-green-700 mb-4">Our Products</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex items-start">
+              <Wheat class="text-green-600 mr-4" />
+              <div>
+                <h3 class="font-semibold text-lg mb-2">Whole Grain Products</h3>
+                <p class="text-gray-700">Nutrient-rich flours and grains for wholesome baking and cooking.</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <Leaf class="text-green-600 mr-4" />
+              <div>
+                <h3 class="font-semibold text-lg mb-2">Organic Spices</h3>
+                <p class="text-gray-700">Pure, aromatic spices to enhance the flavors of your dishes naturally.</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <Apple class="text-green-600 mr-4" />
+              <div>
+                <h3 class="font-semibold text-lg mb-2">Natural Sweeteners</h3>
+                <p class="text-gray-700">Healthy alternatives to refined sugar, perfect for guilt-free indulgence.</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <ShoppingBasket class="text-green-600 mr-4" />
+              <div>
+                <h3 class="font-semibold text-lg mb-2">Ready-to-Eat Snacks</h3>
+                <p class="text-gray-700">Nutritious, convenient snacks made from natural ingredients.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-green-700 mb-4">Our Commitment to Nature and You</h2>
+          <p class="text-gray-700 mb-4">
+            At Balkeys Naturals, we believe in the power of nature to nourish and heal. Our commitment to quality begins with sourcing the finest natural ingredients and extends to our eco-friendly packaging and sustainable practices.
+          </p>
+          <p class="text-gray-700">
+            We work closely with local farmers and ethical suppliers to ensure that our products not only meet the highest standards of quality but also support sustainable agriculture. Our dedication to your health and well-being is reflected in every product we offer, free from artificial additives and preservatives.
+          </p>
+          <p class="text-gray-700 mt-4">
+            As we continue to grow and innovate, our mission remains unchanged: to bring the goodness of nature to your table, promoting health, wellness, and a balanced lifestyle. Thank you for choosing Balkeys Naturals as your partner in healthy living.
+          </p>
+        </section>
+      </main>
+
+
+    </div>
+    <footer id="foot">
+      <h3 class="text-xl font-bold">
+
+          Links
+      </h3>
+      <div class="ft">
+          <div class="ft1 " style="font-size: large;" >
+              <a href="">Home</a><a href="">Contuct Us</a><a href="">Products</a><a href="">Carrer</a><a href="">About Us</a>
+              
+      
+          </div>
+          <div class="ft2" style="font-size: large;">
+              <a href="">Linkdin</a><a href="">Instagram</a><a href="">Twitter</a>
+             
+          </div style="font-size: large;" >
+          <div class="ft3">
+              <a id="email" name="email" href="mailto:?smt2014@gmail.com&body=this+is+a+gmail">smt2014@gmail.com</a> 
+          </div>
+              <p class="text-center text-green-800">&copy; 2024 Balkeys Naturals. All rights reserved.</p>
+      </div>
+  </footer>
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
+</body>
+</html> 
